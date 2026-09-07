@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 
-export default function Navigation() {
+export default function Navigation({ isHome = true }: { isHome?: boolean }) {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
 
@@ -13,12 +13,12 @@ export default function Navigation() {
   }, []);
 
   const navLinks = [
-    { label: 'Work', href: '#work' },
-    { label: 'Services', href: '#services' },
-    { label: 'Concepts', href: '#concepts' },
-    { label: 'Process', href: '#process' },
-    { label: 'About', href: '#about' },
-    { label: 'Contact', href: '#contact' },
+    { label: 'Work', href: isHome ? '#work' : '/#work' },
+    { label: 'Services', href: isHome ? '#services' : '/#services' },
+    { label: 'Concepts', href: isHome ? '#concepts' : '/#concepts' },
+    { label: 'Process', href: isHome ? '#process' : '/#process' },
+    { label: 'About', href: isHome ? '#about' : '/#about' },
+    { label: 'Contact', href: isHome ? '#contact' : '/#contact' },
   ];
 
   return (
@@ -31,7 +31,7 @@ export default function Navigation() {
       <div className="shell flex h-16 items-center justify-between md:h-20">
         {/* Logo */}
         <a
-          href="#"
+          href={isHome ? '#' : '/'}
           aria-label="Rensha Digital — home"
           className="font-display text-[0.95rem] font-semibold tracking-tight"
           style={{ color: 'var(--foreground)' }}
@@ -63,7 +63,7 @@ export default function Navigation() {
         {/* CTA + Mobile Toggle */}
         <div className="flex items-center gap-3">
           <a
-            href="#contact"
+            href={isHome ? '#contact' : '/#contact'}
             className="hidden sm:inline-flex btn-primary"
           >
             Start a Project
@@ -108,7 +108,7 @@ export default function Navigation() {
               </a>
             ))}
             <a
-              href="#contact"
+              href={isHome ? '#contact' : '/#contact'}
               onClick={() => setMobileOpen(false)}
               className="btn-primary mt-4 w-full justify-center"
             >

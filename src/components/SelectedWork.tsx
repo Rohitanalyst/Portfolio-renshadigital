@@ -19,7 +19,7 @@ function ConceptCard({ title, industry, services, description, imageUrl, imageAl
       style={{ transitionDelay: `${delay}ms` }}
     >
       <a
-        href="#concepts"
+        href={title === 'Premium Dental' ? '/concepts/premium-dental' : '#concepts'}
         className="block focus-visible:outline-none"
         aria-label={`View concept: ${title}`}
       >

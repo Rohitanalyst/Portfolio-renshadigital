@@ -2,7 +2,7 @@
 
 import React from 'react';
 
-export default function Footer() {
+export default function Footer({ isHome = true }: { isHome?: boolean }) {
   const currentYear = 2026;
 
   return (
@@ -47,12 +47,12 @@ export default function Footer() {
             </h2>
             <ul className="mt-5 space-y-3 text-sm">
               {[
-                { label: 'Work', href: '#work' },
-                { label: 'Services', href: '#services' },
-                { label: 'Concepts', href: '#concepts' },
-                { label: 'Process', href: '#process' },
-                { label: 'About', href: '#about' },
-                { label: 'Contact', href: '#contact' },
+                { label: 'Work', href: isHome ? '#work' : '/#work' },
+                { label: 'Services', href: isHome ? '#services' : '/#services' },
+                { label: 'Concepts', href: isHome ? '#concepts' : '/#concepts' },
+                { label: 'Process', href: isHome ? '#process' : '/#process' },
+                { label: 'About', href: isHome ? '#about' : '/#about' },
+                { label: 'Contact', href: isHome ? '#contact' : '/#contact' },
               ].map((link) => (
                 <li key={link.label}>
                   <a

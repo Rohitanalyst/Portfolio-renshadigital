@@ -159,7 +159,7 @@ export default function ConceptsSection() {
                   </ul>
 
                   <a
-                  href="#contact"
+                  href={concept.title === 'Premium Dental' ? '/concepts/premium-dental' : '#contact'}
                   className="link-underline mt-8 text-sm font-medium self-start"
                   style={{ color: 'var(--foreground)' }}>
                   

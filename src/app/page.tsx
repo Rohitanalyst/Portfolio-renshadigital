@@ -6,6 +6,7 @@ import SelectedWork from '@/components/SelectedWork';
 import CommercialThinking from '@/components/CommercialThinking';
 import WebsitesSection from '@/components/WebsitesSection';
 import SocialSection from '@/components/SocialSection';
+import CreativeCampaigns from '@/components/CreativeCampaigns';
 import ConceptsSection from '@/components/ConceptsSection';
 import CapabilitiesSection from '@/components/CapabilitiesSection';
 import ProcessSection from '@/components/ProcessSection';
@@ -42,28 +43,31 @@ export default function HomePage() {
         {/* 6. Social & Content */}
         <SocialSection />
 
-        {/* 7. Rensha Concepts */}
+        {/* 7. Creative Campaigns */}
+        <CreativeCampaigns />
+
+        {/* 8. Rensha Concepts */}
         <ConceptsSection />
 
-        {/* 8. Capabilities */}
+        {/* 9. Capabilities */}
         <CapabilitiesSection />
 
-        {/* 9. Process */}
+        {/* 10. Process */}
         <ProcessSection />
 
-        {/* 10. Why Rensha */}
+        {/* 11. Why Rensha */}
         <WhyRensha />
 
-        {/* 11. Industries */}
+        {/* 12. Industries */}
         <IndustriesSection />
 
-        {/* 12. International */}
+        {/* 13. International */}
         <InternationalSection />
 
-        {/* 13. Final CTA */}
+        {/* 14. Final CTA */}
         <FinalCTA />
 
-        {/* 14. Contact Form */}
+        {/* 15. Contact Form */}
         <ContactForm />
       </main>
 

@@ -96,7 +96,7 @@
 
   .eyebrow {
     font-family: 'Inter', sans-serif;
-    font-size: 0.6rem;
+    font-size: 0.65rem;
     font-weight: 500;
     letter-spacing: 0.2em;
     text-transform: uppercase;
@@ -232,6 +232,7 @@
   .concept-badge {
     display: inline-flex;
     align-items: center;
+    justify-content: center;
     gap: 0.5rem;
     border: 1px solid rgba(194, 112, 58, 0.4);
     padding: 0.25rem 0.625rem;
@@ -251,5 +252,47 @@
   .reveal.visible {
     opacity: 1;
     transform: none;
+  }
+
+  /* Mobile responsive safety */
+  html, body {
+    overflow-x: hidden;
+    max-width: 100%;
+  }
+
+  * {
+    min-width: 0;
+  }
+
+  /* Improved readability for small text */
+  .text-description {
+    font-size: 0.9rem;
+    line-height: 1.65;
+    color: var(--muted-foreground);
+  }
+
+  @media (max-width: 640px) {
+    .shell {
+      padding-inline: 1rem;
+    }
+
+    .display-xl {
+      font-size: clamp(2.2rem, 9vw, 3.5rem);
+    }
+
+    .display-lg {
+      font-size: clamp(1.75rem, 7vw, 2.5rem);
+    }
+
+    .lead {
+      font-size: 1rem;
+    }
+
+    .btn-primary,
+    .btn-secondary,
+    .btn-ghost-ink {
+      min-height: 44px;
+      padding: 0.75rem 1.25rem;
+    }
   }
 }

@@ -86,6 +86,7 @@ export default function ContactForm() {
     'Conversion',
     'Social',
     'Growth',
+    'Digital Commercial Production & Brand Assets',
     'Other',
   ];
 

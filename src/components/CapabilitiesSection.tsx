@@ -38,11 +38,18 @@ export default function CapabilitiesSection() {
       num: '02',
     },
     {
+      layer: 'Creative',
+      title: 'Digital Commercial Production & Brand Assets',
+      desc: 'Product visuals, ad creative, launch assets and short-form video built for digital campaigns.',
+      tags: ['Product Visuals', 'Ad Creative', 'Campaign Assets', 'Short-form Video'],
+      num: '03',
+    },
+    {
       layer: 'Systems',
       title: 'CRM & AI Automation',
       desc: 'Lead capture, CRM, follow-up systems and AI-assisted marketing automation.',
       tags: ['Lead Capture', 'CRM Workflows', 'AI Follow-up', 'Marketing Automation'],
-      num: '03',
+      num: '04',
     },
   ];
 
@@ -56,7 +63,7 @@ export default function CapabilitiesSection() {
         </div>
         <div className="md:col-span-5 md:col-start-8">
           <p className="lead">
-            Website → Traffic → Leads → Follow-up → Customer. Three connected layers, one commercial system.
+            Website → Traffic → Leads → Follow-up → Customer. Four connected capabilities, one commercial system.
           </p>
         </div>
       </div>

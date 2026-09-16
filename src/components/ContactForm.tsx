@@ -85,8 +85,21 @@ export default function ContactForm() {
     marginBottom: '0.5rem',
   };
 
-  const serviceOptions = ['Website', 'Conversion', 'Social', 'Growth', 'Other'];
-  const budgets = ['€1k–€3k', '€3k–€7k', '€7k–€15k', '€15k+'];
+  const serviceOptions = [
+    'Website',
+    'Conversion',
+    'Social',
+    'Growth',
+    'Digital Commercial Production & Brand Assets',
+    'Other',
+  ];
+
+  const budgets = [
+    '€1k–€3k',
+    '€3k–€7k',
+    '€7k–€15k',
+    '€15k+',
+  ];
 
   return (
     <section id="contact" ref={ref} className="shell section-pad">

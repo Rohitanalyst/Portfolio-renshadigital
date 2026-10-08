@@ -38,18 +38,32 @@ export default function CapabilitiesSection() {
       num: '02',
     },
     {
+      layer: 'Creative',
+      title: 'Digital Commercial Production & Brand Assets',
+      desc: 'Product visuals, ad creative, launch assets and short-form video built for digital campaigns.',
+      tags: ['Product Visuals', 'Ad Creative', 'Campaign Assets', 'Short-form Video'],
+      num: '03',
+    },
+    {
       layer: 'Growth',
       title: 'Performance Marketing',
       desc: 'Paid campaign planning, testing and measurement against the actual business objective.',
       tags: ['Paid Media', 'Landing Pages', 'Creative Testing', 'Reporting'],
-      num: '03',
+      num: '04',
     },
     {
       layer: 'Experience',
       title: 'Websites & Conversion',
       desc: 'Websites, landing pages and lead journeys that make the next action easy to understand.',
       tags: ['Digital Experience', 'UX/UI', 'Lead Capture', 'Conversion'],
-      num: '04',
+      num: '05',
+    },
+    {
+      layer: 'Systems',
+      title: 'CRM & AI Automation',
+      desc: 'Lead capture, CRM, follow-up systems and AI-assisted marketing automation.',
+      tags: ['Lead Capture', 'CRM Workflows', 'AI Follow-up', 'Marketing Automation'],
+      num: '06',
     },
   ];
 
@@ -63,7 +77,7 @@ export default function CapabilitiesSection() {
         </div>
         <div className="md:col-span-5 md:col-start-8">
           <p className="lead">
-            Social, content, paid media and the website experience should tell a consistent story.
+            From campaign creative and paid media to websites and follow-up, each part should support the next.
           </p>
         </div>
       </div>

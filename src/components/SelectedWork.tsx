@@ -1,206 +1,64 @@
-'use client';
+import Image from 'next/image';
 
-import React, { useEffect, useRef } from 'react';
-
-interface ConceptCardProps {
-  title: string;
-  industry: string;
-  services: string;
-  description: string;
-  imageUrl: string;
-  imageAlt: string;
-  delay?: number;
-}
-
-function ConceptCard({ title, industry, services, description, imageUrl, imageAlt, delay = 0 }: ConceptCardProps) {
-  return (
-    <article
-      className="reveal group"
-      style={{ transitionDelay: `${delay}ms` }}
-    >
-      <a
-        href={title === 'Premium Dental' ? '/concepts/premium-dental' : '#concepts'}
-        className="block focus-visible:outline-none"
-        aria-label={`View concept: ${title}`}
-      >
-        {/* Image */}
-        <div
-          className="overflow-hidden"
-          style={{ backgroundColor: 'var(--surface)', border: '1px solid var(--hairline)' }}
-        >
-          <img
-            src={imageUrl}
-            alt={imageAlt}
-            width={1200}
-            height={800}
-            loading="lazy"
-            decoding="async"
-            className="w-full object-cover transition-transform duration-[900ms] ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-[1.025]"
-            style={{ display: 'block', aspectRatio: '3/2' }}
-          />
-        </div>
-
-        {/* Meta */}
-        <div className="mt-6">
-          <span
-            className="inline-block text-[0.55rem] font-medium uppercase tracking-[0.18em] px-2.5 py-1"
-            style={{
-              border: '1px solid rgba(194,112,58,0.35)',
-              color: 'var(--accent)',
-            }}
-          >
-            Concept / Speculative Project
-          </span>
-          <h3 className="display-md mt-4">{title}</h3>
-          <p className="mt-2 text-sm" style={{ color: 'var(--muted-foreground)' }}>
-            {industry} · {services}
-          </p>
-          <p
-            className="mt-4 text-[1rem] leading-relaxed max-w-lg"
-            style={{ color: 'var(--muted-foreground)' }}
-          >
-            {description}
-          </p>
-          <span
-            className="link-underline mt-5 inline-flex text-sm font-medium"
-            style={{ color: 'var(--foreground)' }}
-          >
-            View Concept
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-              <path d="M7 7h10v10" /><path d="M7 17 17 7" />
-            </svg>
-          </span>
-        </div>
-      </a>
-    </article>
-  );
-}
+const concepts = [
+  {
+    title: 'Premium Dental',
+    category: 'Website & conversion concept',
+    description: 'Treatment discovery, patient qualification and a clearer path to a consultation.',
+    image: '/assets/concepts/premium-dental/advanced-dental-hero.webp',
+    alt: 'Premium Dental website concept hero section',
+    href: '/concepts/premium-dental',
+    action: 'View concept',
+  },
+  {
+    title: 'Luxury Construction',
+    category: 'Digital experience concept',
+    description: 'A portfolio-led enquiry flow designed around the information a prospective client needs before getting in touch.',
+    image: 'https://img.rocket.new/generatedImages/rocket_gen_img_18c0c0f1a-1785157923990.png',
+    alt: 'Construction and architecture website concept on tablet and mobile',
+    href: '#contact',
+    action: 'Discuss a similar project',
+  },
+  {
+    title: 'Luxury Hospitality',
+    category: 'Booking journey concept',
+    description: 'A concept for presenting a property, its experiences and a direct booking path.',
+    image: 'https://img.rocket.new/generatedImages/rocket_gen_img_1ceca7ff8-1767781546613.png',
+    alt: 'Boutique hotel website concept on desktop and mobile',
+    href: '#contact',
+    action: 'Discuss a similar project',
+  },
+];
 
 export default function SelectedWork() {
-  const ref = useRef<HTMLElement>(null);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.querySelectorAll('.reveal').forEach((el, i) => {
-              setTimeout(() => el.classList.add('visible'), i * 80);
-            });
-          }
-        });
-      },
-      { threshold: 0.05 }
-    );
-    if (ref.current) observer.observe(ref.current);
-    return () => observer.disconnect();
-  }, []);
-
-  const concepts: ConceptCardProps[] = [
-    {
-      title: 'Premium Dental',
-      industry: 'Dental & Healthcare',
-      services: 'Digital Experience · Conversion · Mobile UX',
-      description: 'A patient journey that explains treatment, qualifies interest and makes booking a consultation the easiest next step.',
-      imageUrl: 'https://img.rocket.new/generatedImages/rocket_gen_img_11049059d-1772204368831.png',
-      imageAlt: 'Concept dental clinic website shown on desktop and mobile with treatment discovery and consultation booking',
-    },
-    {
-      title: 'Luxury Construction',
-      industry: 'Construction & Architecture',
-      services: 'Digital Experience · Lead Qualification · Visual Storytelling',
-      description: 'A portfolio-led experience that filters serious projects from casual enquiries before a call is ever booked.',
-      imageUrl: 'https://img.rocket.new/generatedImages/rocket_gen_img_18c0c0f1a-1785157923990.png',
-      imageAlt: 'Concept construction and architecture website on tablet and mobile showing a project portfolio and feasibility enquiry flow',
-      delay: 80,
-    },
-    {
-      title: 'Luxury Hospitality',
-      industry: 'Luxury Hospitality & Tourism',
-      services: 'Digital Experience · Booking Journey · Content Direction',
-      description: 'Discovery, experiences and direct booking designed so guests have no reason to leave for an aggregator.',
-      imageUrl: 'https://img.rocket.new/generatedImages/rocket_gen_img_1ceca7ff8-1767781546613.png',
-      imageAlt: 'Concept boutique hotel website on desktop and two mobile screens showing experience discovery and a booking journey',
-      delay: 160,
-    },
-  ];
-
   return (
-    <section id="work" className="shell section-pad" ref={ref}>
-      {/* Header */}
-      <div className="reveal flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
-        <div className="max-w-2xl">
-          <p className="eyebrow">Portfolio</p>
-          <h2 className="display-lg mt-5">Selected Work</h2>
-          <p className="lead mt-5 max-w-xl">
-            Websites, digital experiences, campaigns and growth concepts built around real business objectives.
-          </p>
-        </div>
-      </div>
-
-      {/* Actual Work — Intentional placeholder */}
-      <div className="reveal mt-14" style={{ transitionDelay: '60ms' }}>
-        <div
-          className="border-b pb-5 mb-10"
-          style={{ borderColor: 'var(--hairline)' }}
-        >
-          <p
-            className="text-[0.55rem] font-medium uppercase tracking-[0.18em]"
-            style={{ color: 'var(--muted-foreground)' }}
-          >
-            Client Work
-          </p>
-        </div>
-        <div
-          className="flex flex-col md:flex-row md:items-center md:justify-between gap-6 py-10 px-8 md:px-12"
-          style={{
-            border: '1px solid var(--hairline)',
-            backgroundColor: 'var(--surface)',
-          }}
-        >
+    <section id="work" className="bg-[#f8f5ef] py-20 text-[#24211d] md:py-28">
+      <div className="shell">
+        <div className="grid gap-8 border-b border-[#d7cfc4] pb-10 lg:grid-cols-[1fr_0.65fr] lg:items-end">
           <div>
-            <p
-              className="text-xl font-medium tracking-tight"
-              style={{ fontFamily: 'Manrope, sans-serif', color: 'var(--foreground)' }}
-            >
-              Client work coming soon.
-            </p>
-            <p className="mt-3 text-[0.95rem] max-w-lg leading-relaxed" style={{ color: 'var(--muted-foreground)' }}>
-              Selected client work is currently being prepared. In the meantime, explore Rensha Concepts to see how we approach digital experiences across high-value industries.
-            </p>
-            <p className="mt-3 text-[0.85rem] font-medium tracking-wide" style={{ color: 'var(--muted-foreground)' }}>
-              Websites &amp; Conversion · Paid Acquisition &amp; Social · CRM &amp; AI Automation
-            </p>
+            <p className="premium-kicker text-[#866b49]">Selected concepts</p>
+            <h2 className="premium-section-title mt-5">A closer look at <em>the thinking.</em></h2>
           </div>
-          <a
-            href="#concepts"
-            className="shrink-0 btn-secondary"
-            style={{ whiteSpace: 'nowrap' }}
-          >
-            Explore Concepts
-          </a>
-        </div>
-      </div>
-
-      {/* Rensha Concepts */}
-      <div className="reveal mt-20" style={{ transitionDelay: '80ms' }}>
-        <div
-          className="border-b pb-5 mb-12"
-          style={{ borderColor: 'var(--hairline)' }}
-        >
-          <p
-            className="text-[0.55rem] font-medium uppercase tracking-[0.18em]"
-            style={{ color: 'var(--muted-foreground)' }}
-          >
-            Rensha Concepts
-          </p>
-          <p className="mt-2 text-[0.95rem] max-w-2xl leading-relaxed" style={{ color: 'var(--muted-foreground)' }}>
-            Speculative projects created to demonstrate strategic thinking and execution capability. Every project below is clearly labelled.
+          <p className="max-w-md leading-8 text-[#686158] lg:justify-self-end">
+            These projects show proposed customer journeys and visual direction. They are speculative work, with no client or performance results claimed.
           </p>
         </div>
-        <div className="grid gap-20 md:gap-24 lg:grid-cols-2 lg:gap-x-14">
-          {concepts.map((concept) => (
-            <ConceptCard key={concept.title} {...concept} />
+        <div className="mt-12 grid gap-10 lg:grid-cols-3">
+          {concepts.map((concept, index) => (
+            <article key={concept.title} className="group">
+              <a href={concept.href} className="block focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#866b49]">
+                <div className="relative aspect-[4/3] overflow-hidden bg-[#e4ddd2]">
+                  <Image src={concept.image} alt={concept.alt} fill sizes="(max-width: 1024px) 100vw, 33vw" className="object-cover transition-transform duration-700 group-hover:scale-[1.03]" />
+                </div>
+                <div className="mt-6 flex items-center justify-between border-b border-[#d7cfc4] pb-4">
+                  <p className="premium-kicker text-[#866b49]">{concept.category}</p>
+                  <span className="font-serif text-2xl text-[#9b866a]">0{index + 1}</span>
+                </div>
+                <h3 className="mt-5 font-serif text-3xl leading-tight">{concept.title}</h3>
+                <p className="mt-3 min-h-[4.5rem] leading-7 text-[#686158]">{concept.description}</p>
+                <span className="mt-5 inline-flex gap-2 border-b border-[#24211d] pb-1 text-sm font-medium">{concept.action} <span aria-hidden="true">↗</span></span>
+              </a>
+            </article>
           ))}
         </div>
       </div>

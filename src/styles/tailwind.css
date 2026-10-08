@@ -3,16 +3,16 @@
 @tailwind utilities;
 
 :root {
-  --background: #F8F6F1;
-  --foreground: #1C1A17;
-  --surface: #F2EFE9;
-  --hairline: #D8D4CC;
-  --ink: #161410;
-  --ink-foreground: #F2EFE9;
-  --accent: #C2703A;
+  --background: #F8F5EF;
+  --foreground: #24211D;
+  --surface: #F3EEE6;
+  --hairline: #D7CFC4;
+  --ink: #24211D;
+  --ink-foreground: #F5F0E8;
+  --accent: #987650;
   --accent-foreground: #FAF8F4;
-  --primary: #1C1A17;
-  --primary-foreground: #F8F6F1;
+  --primary: #24211D;
+  --primary-foreground: #F5F0E8;
   --secondary: #EDE9E2;
   --secondary-foreground: #2E2B27;
   --muted: #EDE9E2;
@@ -44,6 +44,10 @@
     line-height: 1.65;
   }
 
+  section[id] {
+    scroll-margin-top: 5rem;
+  }
+
   h1, h2, h3, h4 {
     font-family: 'Manrope', ui-sans-serif, system-ui, sans-serif;
     letter-spacing: -0.025em;
@@ -55,6 +59,78 @@
   ::selection {
     background-color: var(--accent);
     color: var(--accent-foreground);
+  }
+}
+
+.premium-hero {
+  background: radial-gradient(circle at 72% 24%, rgba(120, 99, 73, 0.18), transparent 33%), #24211d;
+}
+
+.premium-kicker {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.66rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  line-height: 1.5;
+  text-transform: uppercase;
+}
+
+.premium-title,
+.premium-section-title {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-weight: 400;
+  letter-spacing: -0.055em;
+}
+
+.premium-title {
+  font-size: clamp(3.5rem, 6.3vw, 7.2rem);
+  line-height: 0.98;
+}
+
+.premium-section-title {
+  font-size: clamp(3rem, 5vw, 5.3rem);
+  line-height: 1.02;
+}
+
+.premium-title em,
+.premium-section-title em {
+  color: #c9ad80;
+  font-weight: 400;
+}
+
+.premium-button {
+  display: inline-flex;
+  min-height: 52px;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  background: #c9ad80;
+  color: #24211d;
+  padding: 0.85rem 1.4rem;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  transition: background 0.2s ease;
+}
+
+.premium-button:hover {
+  background: #e1c79f;
+}
+
+.premium-text-link {
+  display: inline-flex;
+  min-height: 52px;
+  align-items: center;
+  gap: 0.6rem;
+  border-bottom: 1px solid rgba(245, 240, 232, 0.65);
+  color: #f5f0e8;
+  font-size: 0.82rem;
+}
+
+@media (max-width: 640px) {
+  .premium-title {
+    font-size: clamp(3.1rem, 12vw, 4.4rem);
   }
 }
 

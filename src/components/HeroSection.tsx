@@ -1,135 +1,44 @@
-'use client';
-
-import React, { useEffect, useRef } from 'react';
+import Image from 'next/image';
 
 export default function HeroSection() {
-  const sectionRef = useRef<HTMLElement>(null);
-
-  useEffect(() => {
-    const el = sectionRef?.current;
-    if (!el) return;
-    const reveals = el?.querySelectorAll('.reveal');
-    reveals?.forEach((r, i) => {
-      setTimeout(() => r?.classList?.add('visible'), 80 + i * 130);
-    });
-  }, []);
-
   return (
-    <section
-      ref={sectionRef}
-      className="relative overflow-hidden pb-0 pt-28 md:pt-36">
-      
-      <div className="shell">
-        {/* Top content */}
-        <div className="max-w-4xl">
-          <p className="reveal eyebrow">Strategy · Design · Development · Growth</p>
-          <h1 className="reveal display-xl mt-7 max-w-3xl" style={{ transitionDelay: '80ms' }}>
-            Digital experiences that turn attention into customers.
+    <section className="premium-hero relative overflow-hidden text-[#f5f0e8]">
+      <div className="shell grid min-h-[710px] gap-12 py-20 lg:grid-cols-[1.1fr_0.9fr] lg:items-center lg:gap-20 lg:py-24">
+        <div className="relative z-10 max-w-3xl">
+          <p className="premium-kicker text-[#c9ad80]">Independent digital growth studio · Rensha Digital</p>
+          <h1 className="premium-title mt-9 max-w-[780px]">
+            Make the first impression <em>worth staying for.</em>
           </h1>
-          <p className="reveal lead mt-8 max-w-2xl" style={{ transitionDelay: '160ms', fontSize: '1.2rem' }}>
-            Websites, conversion systems and social experiences designed around how modern businesses actually win customers.
+          <p className="mt-9 max-w-xl text-base leading-8 text-[#c9c4bb] md:text-lg">
+            Campaign creative, content and digital experiences built around a clear customer journey. Explore the work, the thinking behind it and the evidence available today.
           </p>
-          <div className="reveal mt-10 flex flex-wrap gap-4" style={{ transitionDelay: '240ms' }}>
-            <a href="#work" className="btn-primary" style={{ padding: '1rem 1.75rem', fontSize: '0.9rem' }}>
-              View Selected Work
-            </a>
-            <a href="#contact" className="btn-secondary" style={{ padding: '1rem 1.75rem', fontSize: '0.9rem' }}>
-              Start a Project
-            </a>
+          <div className="mt-10 flex flex-wrap items-center gap-4">
+            <a href="#work" className="premium-button">Explore the work <span aria-hidden="true">↗</span></a>
+            <a href="#evidence" className="premium-text-link">See what the work proves <span aria-hidden="true">↓</span></a>
+          </div>
+          <div className="mt-14 flex flex-wrap gap-x-8 gap-y-3 border-t border-white/15 pt-6 text-xs uppercase tracking-[0.14em] text-[#aea89e]">
+            <span>Social media</span><span>Content</span><span>Performance marketing</span>
           </div>
         </div>
 
-        {/* Hero visual — layered editorial composition */}
-        <div
-          className="reveal relative mt-16 md:mt-20"
-          style={{ transitionDelay: '200ms' }}>
-          
-          {/* Main desktop screen */}
-          <div
-            className="relative overflow-hidden"
-            style={{
-              backgroundColor: 'var(--surface)',
-              border: '1px solid var(--hairline)'
-            }}>
-            
-            <img
-              src="https://img.rocket.new/generatedImages/rocket_gen_img_138b98b41-1788339522151.png"
-              alt="Premium website interface showing a conversion-focused digital experience designed by Rensha Digital"
-              width={1600}
-              height={900}
-              className="w-full object-cover"
-              style={{ display: 'block', maxHeight: '72vh', objectPosition: 'top' }}
-              loading="eager"
-              decoding="async" />
-            
-            {/* Overlay gradient at bottom */}
-            <div
-              className="absolute inset-x-0 bottom-0 h-32 pointer-events-none"
-              style={{
-                background: 'linear-gradient(to top, var(--background) 0%, transparent 100%)'
-              }}
-              aria-hidden="true" />
-            
+        <div className="relative mx-auto w-full max-w-[570px] lg:mx-0">
+          <div className="relative aspect-[4/5] overflow-hidden bg-[#393229]">
+            <Image src="/creative/sunglasses/01.webp" alt="Sunglasses lifestyle campaign concept by Rensha Digital" fill priority sizes="(max-width: 1024px) 100vw, 45vw" className="object-cover" />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#1c1b19]/70 via-transparent to-transparent" />
+            <div className="absolute bottom-6 left-6 right-6 flex items-end justify-between gap-5 text-white">
+              <div>
+                <span className="premium-kicker !text-[0.6rem] text-white/75">Featured independent concept</span>
+                <p className="mt-2 font-serif text-3xl leading-none">Sunglasses lifestyle</p>
+              </div>
+              <a href="#creative-work" className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-white/60 text-lg" aria-label="Explore creative concepts">↗</a>
+            </div>
           </div>
-
-          {/* Floating mobile overlay — bottom right */}
-          <div
-            className="absolute hidden md:block"
-            style={{
-              bottom: '2.5rem',
-              right: '2rem',
-              width: '14%',
-              minWidth: '120px',
-              border: '1px solid var(--hairline)',
-              backgroundColor: 'var(--surface)',
-              boxShadow: '0 8px 40px rgba(28,26,23,0.12)'
-            }}>
-            
-            <img
-              src="https://images.unsplash.com/photo-1612298968918-daae41e26d37"
-              alt="Mobile website interface showing a premium dental concept on a smartphone screen"
-              width={300}
-              height={540}
-              loading="lazy"
-              decoding="async"
-              className="w-full object-cover"
-              style={{ display: 'block' }} />
-            
-          </div>
-
-          {/* Floating detail card — bottom left */}
-          <div
-            className="absolute hidden lg:flex flex-col gap-1"
-            style={{
-              bottom: '2.5rem',
-              left: '2rem',
-              backgroundColor: 'var(--ink)',
-              color: 'var(--ink-foreground)',
-              padding: '1rem 1.25rem',
-              minWidth: '200px'
-            }}>
-            
-            <p
-              className="text-[0.55rem] font-medium uppercase tracking-[0.2em]"
-              style={{ color: 'rgba(242,239,233,0.45)' }}>
-              
-              Rensha Digital
-            </p>
-            <p
-              className="text-sm font-medium tracking-tight mt-1"
-              style={{ fontFamily: 'Manrope, sans-serif' }}>
-              
-              Attention → Customer
-            </p>
-            <p
-              className="text-[0.75rem] mt-0.5"
-              style={{ color: 'rgba(242,239,233,0.55)' }}>
-              
-              Strategy · Design · Conversion
-            </p>
+          <div className="absolute -bottom-5 -left-5 hidden border border-[#a78e6b]/45 bg-[#28241f] px-5 py-4 text-[#eee6d8] shadow-2xl md:block">
+            <p className="premium-kicker !text-[0.57rem] text-[#c9ad80]">What you are viewing</p>
+            <p className="mt-1 text-sm">Concept work, clearly identified</p>
           </div>
         </div>
       </div>
-    </section>);
-
+    </section>
+  );
 }

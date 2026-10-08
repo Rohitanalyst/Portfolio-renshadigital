@@ -8,20 +8,20 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  title: 'Rensha Digital | Websites, Digital Growth & Conversion',
-  description: 'Rensha Digital creates conversion-focused websites, social experiences and digital growth systems for ambitious businesses and startups.',
+  title: 'Rensha Digital | Campaign Creative, Content & Digital Growth',
+  description: 'Explore Rensha Digital’s independent campaign concepts, content production and digital experience work, with clear labels for available evidence.',
   authors: [{ name: 'Rensha Digital' }],
   openGraph: {
-    title: 'Rensha Digital | Websites, Digital Growth & Conversion',
-    description: 'Digital experiences that turn attention into customers. Strategy, design, development and growth for international businesses.',
-    url: 'https://renshadigital.com',
+    title: 'Rensha Digital | Campaign Creative, Content & Digital Growth',
+    description: 'Explore campaign creative, content and digital experience work by Rensha Digital.',
+    url: 'https://portfolio.renshadigital.in/',
     siteName: 'Rensha Digital',
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Rensha Digital | Websites, Digital Growth & Conversion',
-    description: 'Digital experiences that turn attention into customers. Strategy, design, development and growth for international businesses.',
+    title: 'Rensha Digital | Campaign Creative, Content & Digital Growth',
+    description: 'Campaign creative, content and digital experience work by Rensha Digital.',
   },
   icons: {
     icon: [{ url: '/favicon.ico', type: 'image/x-icon' }],

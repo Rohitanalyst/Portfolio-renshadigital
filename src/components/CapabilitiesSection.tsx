@@ -24,31 +24,31 @@ export default function CapabilitiesSection() {
 
   const layers = [
     {
-      layer: 'Core',
-      title: 'Websites & Conversion',
-      desc: 'Websites, landing pages, conversion architecture and digital experiences.',
-      tags: ['Digital Experience', 'UX/UI', 'Conversion Optimisation', 'Landing Pages'],
+      layer: 'Social',
+      title: 'Social Media Marketing',
+      desc: 'Audience positioning, campaign ideas and creative systems for the channels where your customers spend time.',
+      tags: ['Channel Strategy', 'Campaign Concepts', 'Social Creative', 'Content Planning'],
       num: '01',
     },
     {
-      layer: 'Growth',
-      title: 'Paid Acquisition & Social',
-      desc: 'Paid advertising, lead generation, social content and campaign creative.',
-      tags: ['Paid Media', 'Lead Generation', 'Social Content', 'Campaign Creative'],
+      layer: 'Content',
+      title: 'Content Marketing',
+      desc: 'Product stories, short-form video and visual assets shaped for a clear message and next step.',
+      tags: ['Art Direction', 'Product Visuals', 'Short-form Video', 'Campaign Assets'],
       num: '02',
     },
     {
-      layer: 'Creative',
-      title: 'Digital Commercial Production & Brand Assets',
-      desc: 'Product visuals, ad creative, launch assets and short-form video built for digital campaigns.',
-      tags: ['Product Visuals', 'Ad Creative', 'Campaign Assets', 'Short-form Video'],
+      layer: 'Growth',
+      title: 'Performance Marketing',
+      desc: 'Paid campaign planning, testing and measurement against the actual business objective.',
+      tags: ['Paid Media', 'Landing Pages', 'Creative Testing', 'Reporting'],
       num: '03',
     },
     {
-      layer: 'Systems',
-      title: 'CRM & AI Automation',
-      desc: 'Lead capture, CRM, follow-up systems and AI-assisted marketing automation.',
-      tags: ['Lead Capture', 'CRM Workflows', 'AI Follow-up', 'Marketing Automation'],
+      layer: 'Experience',
+      title: 'Websites & Conversion',
+      desc: 'Websites, landing pages and lead journeys that make the next action easy to understand.',
+      tags: ['Digital Experience', 'UX/UI', 'Lead Capture', 'Conversion'],
       num: '04',
     },
   ];
@@ -59,11 +59,11 @@ export default function CapabilitiesSection() {
       <div className="reveal grid gap-8 md:grid-cols-12 md:items-end mb-14 md:mb-20">
         <div className="md:col-span-6">
           <p className="eyebrow">Services</p>
-          <h2 className="display-lg mt-5">Built around the customer journey.</h2>
+          <h2 className="display-lg mt-5">From the first view to the next step.</h2>
         </div>
         <div className="md:col-span-5 md:col-start-8">
           <p className="lead">
-            Website → Traffic → Leads → Follow-up → Customer. Four connected capabilities, one commercial system.
+            Social, content, paid media and the website experience should tell a consistent story.
           </p>
         </div>
       </div>

@@ -27,7 +27,7 @@ export default function Footer({ isHome = true }: { isHome?: boolean }) {
               className="mt-6 max-w-xs text-sm leading-relaxed"
               style={{ color: 'rgba(242,239,233,0.55)' }}
             >
-              Digital experiences that turn attention into customers.
+              Campaign creative, content and digital experiences with a clear customer journey.
             </p>
             <p
               className="mt-4 text-sm leading-relaxed"
@@ -47,9 +47,10 @@ export default function Footer({ isHome = true }: { isHome?: boolean }) {
             </h2>
             <ul className="mt-5 space-y-3 text-sm">
               {[
+                { label: 'Evidence', href: isHome ? '#evidence' : '/#evidence' },
+                { label: 'Campaigns', href: isHome ? '#creative-work' : '/#creative-work' },
                 { label: 'Work', href: isHome ? '#work' : '/#work' },
                 { label: 'Services', href: isHome ? '#services' : '/#services' },
-                { label: 'Concepts', href: isHome ? '#concepts' : '/#concepts' },
                 { label: 'Process', href: isHome ? '#process' : '/#process' },
                 { label: 'About', href: isHome ? '#about' : '/#about' },
                 { label: 'Contact', href: isHome ? '#contact' : '/#contact' },

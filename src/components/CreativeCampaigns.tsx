@@ -1,3 +1,6 @@
+'use client';
+
+import { useEffect } from 'react';
 import Image from 'next/image';
 
 type MediaItem = {
@@ -7,6 +10,7 @@ type MediaItem = {
 };
 
 type Project = {
+  id: string;
   title: string;
   category: string;
   description: string;
@@ -15,6 +19,7 @@ type Project = {
 
 const projects: Project[] = [
   {
+    id: 'creative-appliances',
     title: 'Kitchen Appliance Creative Series',
     category: 'Product Photography & Ad Creative',
     description:
@@ -30,6 +35,7 @@ const projects: Project[] = [
     ],
   },
   {
+    id: 'creative-jewellery',
     title: 'Blue-Heart Jewellery Campaign',
     category: 'Product Photography & Social Creative',
     description:
@@ -44,6 +50,7 @@ const projects: Project[] = [
     ],
   },
   {
+    id: 'creative-scooter-lifestyle',
     title: 'Scooter Lifestyle Campaign',
     category: 'Lifestyle Product Visuals',
     description:
@@ -55,6 +62,7 @@ const projects: Project[] = [
     ],
   },
   {
+    id: 'creative-scooter-studio',
     title: 'Scooter Studio Campaign',
     category: 'Product Launch Visuals',
     description:
@@ -67,6 +75,7 @@ const projects: Project[] = [
     ],
   },
   {
+    id: 'creative-axiora',
     title: 'AXIORA Earbud Creative Series',
     category: 'Product Campaign & Carousel Design',
     description:
@@ -80,6 +89,7 @@ const projects: Project[] = [
     ],
   },
   {
+    id: 'creative-sunglasses',
     title: 'Sunglasses Lifestyle Campaign',
     category: 'Fashion Product Photography',
     description:
@@ -96,20 +106,32 @@ const projects: Project[] = [
 ];
 
 export default function CreativeCampaigns() {
+  useEffect(() => {
+    const openLinkedProject = () => {
+      const id = window.location.hash.slice(1);
+      if (!id.startsWith('creative-')) return;
+      const project = document.getElementById(id);
+      if (project instanceof HTMLDetailsElement) project.open = true;
+    };
+    openLinkedProject();
+    window.addEventListener('hashchange', openLinkedProject);
+    return () => window.removeEventListener('hashchange', openLinkedProject);
+  }, []);
+
   return (
-    <section id="creative-work" className="bg-stone-950 px-6 py-20 text-stone-100 md:px-10 lg:px-16">
+    <section id="creative-work" className="bg-[#24211d] px-6 py-20 text-[#f5f0e8] md:px-10 md:py-28 lg:px-16">
       <div className="mx-auto max-w-7xl">
-        <p className="mb-4 text-xs font-semibold uppercase tracking-[0.22em] text-amber-300">Creative Campaigns</p>
+        <p className="premium-kicker mb-5 text-[#c9ad80]">Creative portfolio</p>
         <div className="mb-12 max-w-3xl">
-          <h2 className="text-4xl font-medium tracking-tight md:text-6xl">Product imagery built for the feed, the campaign and the launch.</h2>
-          <p className="mt-5 text-lg leading-8 text-stone-300">
-            Independent concept work showing how product photography, campaign art direction and social creative can work together. These are not client projects and no campaign results are claimed.
+          <h2 className="premium-section-title">A concept should feel <em>ready to see.</em></h2>
+          <p className="mt-6 text-base leading-8 text-[#c7beb2] md:text-lg">
+            Explore independent product and campaign concepts across stills, carousels and motion. These are creative examples, not client projects or measured campaign results.
           </p>
         </div>
 
         <div className="grid gap-7 md:grid-cols-2 xl:grid-cols-3">
           {projects.map((project) => (
-            <details key={project.title} className="group overflow-hidden rounded-2xl border border-white/10 bg-white/[0.04]">
+            <details id={project.id} key={project.title} className="group overflow-hidden border border-[#595044] bg-white/[0.035]">
               <summary className="cursor-pointer list-none">
                 <div className="relative aspect-[4/5] overflow-hidden bg-stone-900">
                   <Image
@@ -121,16 +143,16 @@ export default function CreativeCampaigns() {
                   />
                 </div>
                 <div className="p-6">
-                  <p className="text-xs font-semibold uppercase tracking-[0.16em] text-amber-300">{project.category}</p>
-                  <h3 className="mt-3 text-2xl font-medium">{project.title}</h3>
-                  <p className="mt-3 leading-7 text-stone-300">{project.description}</p>
-                  <span className="mt-5 inline-block text-sm font-semibold text-white underline decoration-amber-300 underline-offset-4 group-open:hidden">View project</span>
-                  <span className="mt-5 hidden text-sm font-semibold text-white underline decoration-amber-300 underline-offset-4 group-open:inline-block">Close project</span>
+                  <p className="premium-kicker text-[#c9ad80]">{project.category}</p>
+                  <h3 className="mt-3 font-serif text-3xl font-normal">{project.title}</h3>
+                  <p className="mt-3 leading-7 text-[#c7beb2]">{project.description}</p>
+                  <span className="mt-5 inline-block border-b border-[#c9ad80] pb-1 text-sm text-white group-open:hidden">View project ↗</span>
+                  <span className="mt-5 hidden border-b border-[#c9ad80] pb-1 text-sm text-white group-open:inline-block">Close project</span>
                 </div>
               </summary>
               <div className="grid gap-3 border-t border-white/10 p-4 sm:grid-cols-2">
                 {project.media.slice(1).map((item) => (
-                  <div key={item.src} className="relative aspect-[4/5] overflow-hidden rounded-lg bg-stone-900 sm:even:aspect-square">
+                  <div key={item.src} className="relative aspect-[4/5] overflow-hidden bg-stone-900 sm:even:aspect-square">
                     {item.type === 'video' ? (
                       <video controls preload="metadata" className="h-full w-full object-cover">
                         <source src={item.src} type="video/mp4" />

@@ -30,10 +30,10 @@ export default function Footer({ isHome = true }: { isHome?: boolean }) {
               Digital experiences that turn attention into customers.
             </p>
             <p
-              className="mt-5 text-sm"
+              className="mt-4 text-sm leading-relaxed"
               style={{ color: 'rgba(242,239,233,0.4)' }}
             >
-              Based in India. Serving globally.
+              Based in India. Serving ambitious businesses across international markets.
             </p>
           </div>
 
@@ -59,8 +59,14 @@ export default function Footer({ isHome = true }: { isHome?: boolean }) {
                     href={link.href}
                     className="link-underline"
                     style={{ color: 'rgba(242,239,233,0.65)' }}
-                    onMouseEnter={(e) => ((e.currentTarget as HTMLAnchorElement).style.color = 'var(--ink-foreground)')}
-                    onMouseLeave={(e) => ((e.currentTarget as HTMLAnchorElement).style.color = 'rgba(242,239,233,0.65)')}
+                    onMouseEnter={(e) =>
+                      ((e.currentTarget as HTMLAnchorElement).style.color =
+                        'var(--ink-foreground)')
+                    }
+                    onMouseLeave={(e) =>
+                      ((e.currentTarget as HTMLAnchorElement).style.color =
+                        'rgba(242,239,233,0.65)')
+                    }
                   >
                     {link.label}
                   </a>
@@ -83,8 +89,12 @@ export default function Footer({ isHome = true }: { isHome?: boolean }) {
                   href="mailto:rohit@renshadigital.in"
                   className="link-underline"
                   style={{ color: 'rgba(242,239,233,0.65)' }}
-                  onMouseEnter={(e) => ((e.currentTarget as HTMLAnchorElement).style.color = 'var(--ink-foreground)')}
-                  onMouseLeave={(e) => ((e.currentTarget as HTMLAnchorElement).style.color = 'rgba(242,239,233,0.65)')}
+                  onMouseEnter={(e) =>
+                    ((e.currentTarget as HTMLAnchorElement).style.color = 'var(--ink-foreground)')
+                  }
+                  onMouseLeave={(e) =>
+                    ((e.currentTarget as HTMLAnchorElement).style.color = 'rgba(242,239,233,0.65)')
+                  }
                 >
                   rohit@renshadigital.in
                 </a>
@@ -96,23 +106,14 @@ export default function Footer({ isHome = true }: { isHome?: boolean }) {
                   rel="noreferrer noopener"
                   className="link-underline"
                   style={{ color: 'rgba(242,239,233,0.65)' }}
-                  onMouseEnter={(e) => ((e.currentTarget as HTMLAnchorElement).style.color = 'var(--ink-foreground)')}
-                  onMouseLeave={(e) => ((e.currentTarget as HTMLAnchorElement).style.color = 'rgba(242,239,233,0.65)')}
+                  onMouseEnter={(e) =>
+                    ((e.currentTarget as HTMLAnchorElement).style.color = 'var(--ink-foreground)')
+                  }
+                  onMouseLeave={(e) =>
+                    ((e.currentTarget as HTMLAnchorElement).style.color = 'rgba(242,239,233,0.65)')
+                  }
                 >
                   LinkedIn
-                </a>
-              </li>
-              <li>
-                <a
-                  href="https://wa.me/910000000000"
-                  target="_blank"
-                  rel="noreferrer noopener"
-                  className="link-underline"
-                  style={{ color: 'rgba(242,239,233,0.65)' }}
-                  onMouseEnter={(e) => ((e.currentTarget as HTMLAnchorElement).style.color = 'var(--ink-foreground)')}
-                  onMouseLeave={(e) => ((e.currentTarget as HTMLAnchorElement).style.color = 'rgba(242,239,233,0.65)')}
-                >
-                  WhatsApp
                 </a>
               </li>
             </ul>

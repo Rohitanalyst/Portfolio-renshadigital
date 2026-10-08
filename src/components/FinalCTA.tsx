@@ -102,7 +102,7 @@ export default function FinalCTA() {
             LinkedIn
           </a>
           <a
-            href="https://wa.me/910000000000"
+            href="https://wa.me/917042705236"
             target="_blank"
             rel="noreferrer noopener"
             className="link-underline"

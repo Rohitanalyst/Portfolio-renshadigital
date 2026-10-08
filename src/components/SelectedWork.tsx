@@ -166,7 +166,10 @@ export default function SelectedWork() {
               Client work coming soon.
             </p>
             <p className="mt-3 text-[0.95rem] max-w-lg leading-relaxed" style={{ color: 'var(--muted-foreground)' }}>
-              Selected client work is currently being prepared. Until then, explore Rensha Concepts to see how we approach digital experiences across high-value industries.
+              Selected client work is currently being prepared. In the meantime, explore Rensha Concepts to see how we approach digital experiences across high-value industries.
+            </p>
+            <p className="mt-3 text-[0.85rem] font-medium tracking-wide" style={{ color: 'var(--muted-foreground)' }}>
+              Websites &amp; Conversion · Paid Acquisition &amp; Social · CRM &amp; AI Automation
             </p>
           </div>
           <a

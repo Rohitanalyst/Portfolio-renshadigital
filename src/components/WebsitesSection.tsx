@@ -22,12 +22,7 @@ export default function WebsitesSection() {
     return () => observer?.disconnect();
   }, []);
 
-  const capabilities = [
-  'Responsive',
-  'Conversion-led',
-  'Performance',
-  'Connected'];
-
+  const capabilities = ['Responsive', 'Conversion-led', 'Performance', 'Connected'];
 
   return (
     <section className="shell section-pad" ref={ref}>
@@ -42,29 +37,32 @@ export default function WebsitesSection() {
             From first impression to enquiry, every interaction should reduce friction and increase confidence.
           </p>
           <div className="mt-6 flex flex-wrap gap-2">
-            {capabilities?.map((cap) =>
-            <span
-              key={cap}
-              className="px-3 py-1.5 text-xs font-medium tracking-wide uppercase"
-              style={{
-                border: '1px solid var(--hairline)',
-                color: 'var(--muted-foreground)',
-                letterSpacing: '0.1em'
-              }}>
-              
+            {capabilities?.map((cap) => (
+              <span
+                key={cap}
+                className="px-3 py-1.5 text-xs font-medium tracking-wide uppercase"
+                style={{
+                  border: '1px solid var(--hairline)',
+                  color: 'var(--muted-foreground)',
+                  letterSpacing: '0.1em',
+                }}
+              >
                 {cap}
               </span>
-            )}
+            ))}
           </div>
         </div>
       </div>
 
-      {/* Large visual */}
+      {/* Large visual — tightly cropped to fill composition */}
       <div className="reveal mt-12 md:mt-16" style={{ transitionDelay: '60ms' }}>
         <div
           className="overflow-hidden"
-          style={{ border: '1px solid var(--hairline)', backgroundColor: 'var(--surface)' }}>
-          
+          style={{
+            border: '1px solid var(--hairline)',
+            backgroundColor: 'var(--surface)',
+          }}
+        >
           <img
             src="https://img.rocket.new/generatedImages/rocket_gen_img_137e07aee-1788335957739.png"
             alt="Desktop landing page, mobile service page and enquiry form interfaces designed for conversion"
@@ -72,21 +70,25 @@ export default function WebsitesSection() {
             height={900}
             loading="lazy"
             decoding="async"
-            className="w-full object-cover"
-            style={{ display: 'block' }} />
-          
+            className="w-full object-cover object-top"
+            style={{
+              display: 'block',
+              aspectRatio: '16/7',
+              maxHeight: '520px',
+            }}
+          />
         </div>
       </div>
 
       {/* Secondary visual row */}
       <div
-        className="reveal mt-4 grid grid-cols-2 gap-4 md:grid-cols-3"
-        style={{ transitionDelay: '100ms' }}>
-        
+        className="reveal mt-3 grid grid-cols-2 gap-3 md:grid-cols-3"
+        style={{ transitionDelay: '100ms' }}
+      >
         <div
           className="overflow-hidden col-span-2 md:col-span-2"
-          style={{ border: '1px solid var(--hairline)', backgroundColor: 'var(--surface)' }}>
-          
+          style={{ border: '1px solid var(--hairline)', backgroundColor: 'var(--surface)' }}
+        >
           <img
             src="https://img.rocket.new/generatedImages/rocket_gen_img_11369e997-1788339522450.png"
             alt="Construction website landing page showing a project portfolio and qualification flow"
@@ -94,14 +96,14 @@ export default function WebsitesSection() {
             height={500}
             loading="lazy"
             decoding="async"
-            className="w-full object-cover"
-            style={{ display: 'block', aspectRatio: '16/9' }} />
-          
+            className="w-full object-cover object-top"
+            style={{ display: 'block', aspectRatio: '16/8' }}
+          />
         </div>
         <div
           className="overflow-hidden"
-          style={{ border: '1px solid var(--hairline)', backgroundColor: 'var(--surface)' }}>
-          
+          style={{ border: '1px solid var(--hairline)', backgroundColor: 'var(--surface)' }}
+        >
           <img
             src="https://img.rocket.new/generatedImages/rocket_gen_img_16280ac41-1772078444827.png"
             alt="Mobile dental website showing a consultation booking flow on a smartphone"
@@ -109,9 +111,9 @@ export default function WebsitesSection() {
             height={500}
             loading="lazy"
             decoding="async"
-            className="w-full object-cover"
-            style={{ display: 'block', aspectRatio: '4/5' }} />
-          
+            className="w-full object-cover object-top"
+            style={{ display: 'block', aspectRatio: '4/5' }}
+          />
         </div>
       </div>
 
@@ -120,14 +122,25 @@ export default function WebsitesSection() {
         <a
           href="#contact"
           className="link-underline text-sm font-medium"
-          style={{ color: 'var(--foreground)' }}>
-          
+          style={{ color: 'var(--foreground)' }}
+        >
           Discuss your website project
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-            <path d="M7 7h10v10" /><path d="M7 17 17 7" />
+          <svg
+            width="16"
+            height="16"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            aria-hidden="true"
+          >
+            <path d="M7 7h10v10" />
+            <path d="M7 17 17 7" />
           </svg>
         </a>
       </div>
-    </section>);
-
+    </section>
+  );
 }

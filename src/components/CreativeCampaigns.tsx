@@ -6,7 +6,7 @@ import Image from 'next/image';
 type MediaItem = {
   src: string;
   alt: string;
-  type?: 'image' | 'video';
+  type?: 'image' | 'video' | 'youtube';
 };
 
 type Project = {
@@ -29,7 +29,7 @@ const projects: Project[] = [
       { src: '/creative/heater/02-product.webp', alt: 'Red radiant heater product visual on a dark studio background' },
       { src: '/creative/heater/03-morning.webp', alt: 'Red radiant heater in a bright living room' },
       { src: '/creative/heater/04-evening.webp', alt: 'Red radiant heater in an evening living room scene' },
-      { src: '/creative/heater/05-reel.mp4', alt: 'Winter heater narrated motion concept', type: 'video' },
+      { src: 'https://www.youtube-nocookie.com/embed/-pxJ4AbfinY', alt: 'Winter heater narrated motion concept', type: 'youtube' },
     ],
   },
   {
@@ -167,8 +167,22 @@ export default function CreativeCampaigns() {
               </summary>
               <div className="grid gap-3 border-t border-white/10 p-4 sm:grid-cols-2">
                 {project.media.slice(1).map((item) => (
-                  <div key={item.src} className="relative aspect-[4/5] overflow-hidden bg-stone-900 sm:even:aspect-square">
-                    {item.type === 'video' ? (
+                  <div key={item.src} className={item.type === 'youtube' ? 'flex flex-col items-center gap-4 bg-stone-950 p-4 sm:col-span-2' : 'relative aspect-[4/5] overflow-hidden bg-stone-900 sm:even:aspect-square'}>
+                    {item.type === 'youtube' ? (
+                      <>
+                        <iframe
+                          src={item.src}
+                          title={item.alt}
+                          loading="lazy"
+                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                          allowFullScreen
+                          className="aspect-[9/16] w-full max-w-[340px] border-0"
+                        />
+                        <a href="https://www.youtube.com/shorts/-pxJ4AbfinY" target="_blank" rel="noopener noreferrer" className="border-b border-[#c9ad80] pb-1 text-sm text-[#e8d6b9]">
+                          Watch the heater reel on YouTube ↗
+                        </a>
+                      </>
+                    ) : item.type === 'video' ? (
                       <video controls preload="metadata" className="h-full w-full object-cover">
                         <source src={item.src} type="video/mp4" />
                         Your browser does not support this video.

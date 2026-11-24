@@ -27,7 +27,7 @@ export default function PortfolioFilms() {
             </h2>
           </div>
           <p className="max-w-md leading-7 text-[#c7beb2] lg:justify-self-end">
-            Three independent film concepts. Watch the heater reel here, alongside the jewellery and footwear films on YouTube.
+            Two independent film concepts. Watch them here or open the full videos on YouTube.
           </p>
         </div>
 
@@ -64,31 +64,6 @@ export default function PortfolioFilms() {
             </article>
           ))}
         </div>
-        <article className="mt-6 grid gap-6 bg-[#37312a] p-5 md:grid-cols-[minmax(0,280px)_1fr] md:items-center md:gap-10 md:p-7">
-          <div className="mx-auto aspect-[9/16] w-full max-w-[280px] overflow-hidden bg-black">
-            <video
-              controls
-              preload="none"
-              playsInline
-              poster="/creative/heater/03-morning.webp"
-              className="h-full w-full object-cover"
-              aria-label="Winter heater campaign narrated video concept"
-            >
-              <source src="/creative/heater/05-reel.mp4" type="video/mp4" />
-              Your browser does not support this video.
-            </video>
-          </div>
-          <div>
-            <p className="premium-kicker text-[#c9ad80]">Vertical film · Independent concept</p>
-            <h3 className="mt-3 font-serif text-3xl md:text-4xl">Winter Heater Campaign</h3>
-            <p className="mt-4 max-w-lg text-sm leading-7 text-[#c7beb2]">
-              A narrated product reel built from warm lifestyle scenes and heater visuals.
-            </p>
-            <a href="#creative-winter-heater" className="mt-6 inline-flex items-center gap-2 border-b border-[#c9ad80] pb-1 text-sm text-[#e8d6b9]">
-              Explore the full campaign <span aria-hidden="true">↗</span>
-            </a>
-          </div>
-        </article>
       </div>
     </section>
   );

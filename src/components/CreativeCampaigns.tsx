@@ -19,6 +19,20 @@ type Project = {
 
 const projects: Project[] = [
   {
+    id: 'creative-winter-heater',
+    title: 'Winter Heater Campaign',
+    category: 'Product Visuals & Motion Concept',
+    description:
+      'An independent winter heater concept with product stills, lifestyle scenes and a narrated vertical reel.',
+    media: [
+      { src: '/creative/heater/01-hero.png', alt: 'Red radiant heater in a warm living room' },
+      { src: '/creative/heater/02-product.png', alt: 'Red radiant heater product visual on a dark studio background' },
+      { src: '/creative/heater/03-morning.png', alt: 'Red radiant heater in a bright living room' },
+      { src: '/creative/heater/04-evening.png', alt: 'Red radiant heater in an evening living room scene' },
+      { src: '/creative/heater/05-reel.mp4', alt: 'Winter heater narrated motion concept', type: 'video' },
+    ],
+  },
+  {
     id: 'creative-appliances',
     title: 'Kitchen Appliance Creative Series',
     category: 'Product Photography & Ad Creative',

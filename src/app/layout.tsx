@@ -8,6 +8,7 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://portfolio.renshadigital.in'),
   title: 'Rensha Digital | Campaign Creative, Content & Digital Growth',
   description: 'Explore Rensha Digital’s independent campaign concepts, content production and digital experience work, with clear labels for available evidence.',
   authors: [{ name: 'Rensha Digital' }],
@@ -17,14 +18,17 @@ export const metadata: Metadata = {
     url: 'https://portfolio.renshadigital.in/',
     siteName: 'Rensha Digital',
     type: 'website',
+    images: [{ url: '/brand/rensha-og-dark.png', width: 1200, height: 630, alt: 'Rensha Digital logo' }],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Rensha Digital | Campaign Creative, Content & Digital Growth',
     description: 'Campaign creative, content and digital experience work by Rensha Digital.',
+    images: ['/brand/rensha-og-dark.png'],
   },
   icons: {
     icon: [{ url: '/favicon.ico', type: 'image/x-icon' }],
+    apple: [{ url: '/apple-touch-icon.png', sizes: '180x180', type: 'image/png' }],
   },
 };
 

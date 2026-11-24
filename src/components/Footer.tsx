@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import Image from 'next/image';
 
 export default function Footer({ isHome = true }: { isHome?: boolean }) {
   const currentYear = 2026;
@@ -11,12 +12,7 @@ export default function Footer({ isHome = true }: { isHome?: boolean }) {
         <div className="grid gap-12 md:grid-cols-12">
           {/* Brand */}
           <div className="md:col-span-4">
-            <p
-              className="text-2xl tracking-tight"
-              style={{ fontFamily: 'Manrope, sans-serif', fontWeight: 500 }}
-            >
-              Rensha<span style={{ color: 'var(--accent)' }}>.</span> Digital
-            </p>
+            <Image src="/brand/rensha-logo-transparent.png" alt="Rensha Digital" width={650} height={175} className="h-14 w-auto" />
             <p
               className="mt-3 text-xs font-medium uppercase tracking-[0.16em]"
               style={{ color: 'rgba(242,239,233,0.35)' }}

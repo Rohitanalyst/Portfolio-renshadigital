@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import Image from 'next/image';
 
 export default function Navigation({ isHome = true }: { isHome?: boolean }) {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -16,8 +17,8 @@ export default function Navigation({ isHome = true }: { isHome?: boolean }) {
   return (
     <header className="fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-[#24211d]/95 text-[#f5f0e8] backdrop-blur-md">
       <div className="shell flex h-16 items-center justify-between gap-6 md:h-20">
-        <a href={isHome ? '#' : '/'} aria-label="Rensha Digital home" className="shrink-0 font-serif text-2xl tracking-tight">
-          Rensha<span className="text-[#c9ad80]">.</span><span className="ml-2 font-sans text-[0.58rem] font-semibold uppercase tracking-[0.26em] text-[#b9b0a3]">Digital</span>
+        <a href={isHome ? '#' : '/'} aria-label="Rensha Digital home" className="shrink-0">
+          <Image src="/brand/rensha-logo-transparent.png" alt="Rensha Digital" width={650} height={175} priority className="h-10 w-auto md:h-12" />
         </a>
         <nav aria-label="Primary" className="hidden items-center gap-7 lg:flex">
           {navLinks.map((link) => <a key={link.label} href={link.href} className="text-xs uppercase tracking-[0.1em] text-[#cfc7bb] transition-colors hover:text-white">{link.label}</a>)}

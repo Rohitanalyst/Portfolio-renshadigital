@@ -54,7 +54,7 @@ export default function ContactForm() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    const subject = `Project Enquiry from ${encodeURIComponent(formData.name)} — ${encodeURIComponent(formData.company)}`;
+    const subject = encodeURIComponent(`Project Enquiry from ${formData.name} - ${formData.company}`);
     const body = encodeURIComponent(
       `Name: ${formData.name}\nCompany: ${formData.company}\nEmail: ${formData.email}\nWebsite: ${formData.website}\nCountry: ${formData.country}\nService: ${formData.services}\nBudget: ${formData.budget}\n\nWhat they need help with:\n${formData.helpWith}\n\nMessage:\n${formData.message}`
     );
@@ -86,11 +86,13 @@ export default function ContactForm() {
   };
 
   const serviceOptions = [
-    'Website',
-    'Conversion',
-    'Social',
-    'Growth',
+    'Social Media Marketing',
+    'Content Marketing',
     'Digital Commercial Production & Brand Assets',
+    'Performance Marketing',
+    'Websites & Conversion',
+    'CRM & AI Automation',
+    'AI SEO, AEO & GEO',
     'Other',
   ];
 
@@ -153,13 +155,13 @@ export default function ContactForm() {
                 className="text-xs font-medium uppercase tracking-[0.15em]"
                 style={{ color: 'var(--accent)' }}
               >
-                Message sent
+                Check your email app
               </p>
               <h3 className="text-2xl font-medium tracking-tight" style={{ fontFamily: 'Manrope, sans-serif' }}>
-                Your email client should have opened.
+                Your enquiry is ready to send.
               </h3>
               <p className="text-sm leading-relaxed" style={{ color: 'var(--muted-foreground)' }}>
-                If it didn't open automatically, send your enquiry directly to{' '}
+                Send the draft from your email app. If it did not open, email us directly at{' '}
                 <a
                   href="mailto:rohit@renshadigital.in"
                   className="link-underline"
@@ -179,7 +181,7 @@ export default function ContactForm() {
               </button>
             </div>
           ) : (
-            <form onSubmit={handleSubmit} className="space-y-6" noValidate>
+            <form onSubmit={handleSubmit} className="space-y-6">
               <div className="grid gap-6 sm:grid-cols-2">
                 <div>
                   <label htmlFor="name" style={labelStyle}>
@@ -330,11 +332,11 @@ export default function ContactForm() {
               </div>
 
               <button type="submit" className="btn-primary w-full justify-center">
-                Send Message
+                Compose enquiry email
               </button>
 
               <p className="text-xs text-center" style={{ color: 'var(--muted-foreground)' }}>
-                Submitting will open your email client addressed to rohit@renshadigital.in
+                This opens an email draft addressed to rohit@renshadigital.in. You will need to press Send in your email app.
               </p>
             </form>
           )}

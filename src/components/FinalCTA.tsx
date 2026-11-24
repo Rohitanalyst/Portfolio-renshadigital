@@ -63,7 +63,7 @@ export default function FinalCTA() {
                 (e.currentTarget as HTMLAnchorElement).style.color = 'var(--ink)';
               }}
             >
-              Book a Discovery Call
+              Discuss your project
             </a>
             <a href="#work" className="btn-ghost-ink">
               View Selected Work
@@ -73,7 +73,7 @@ export default function FinalCTA() {
             className="mt-5 text-sm"
             style={{ color: 'rgba(242,239,233,0.4)' }}
           >
-            20-minute conversation. No generic sales presentation.
+            Tell us what you need, and we can plan the right next step.
           </p>
         </div>
 

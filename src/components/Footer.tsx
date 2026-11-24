@@ -113,6 +113,17 @@ export default function Footer({ isHome = true }: { isHome?: boolean }) {
                   LinkedIn
                 </a>
               </li>
+              <li>
+                <a
+                  href="https://wa.me/917042705236"
+                  target="_blank"
+                  rel="noreferrer noopener"
+                  className="link-underline"
+                  style={{ color: 'rgba(242,239,233,0.65)' }}
+                >
+                  WhatsApp +91 70427 05236
+                </a>
+              </li>
             </ul>
           </div>
         </div>

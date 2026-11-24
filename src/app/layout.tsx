@@ -1,6 +1,7 @@
 import React from 'react';
 import type { Metadata, Viewport } from 'next';
 import '../styles/index.css';
+import WhatsAppButton from '@/components/WhatsAppButton';
 
 export const viewport: Viewport = {
   width: 'device-width',
@@ -64,6 +65,7 @@ export default function RootLayout({
         <script type="module" defer src="https://static.rocket.new/rocket-shot.js?v=0.0.3" /></head>
       <body>
         {children}
+        <WhatsAppButton />
       </body>
     </html>
   );

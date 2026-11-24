@@ -65,6 +65,13 @@ export default function CapabilitiesSection() {
       tags: ['Lead Capture', 'CRM Workflows', 'AI Follow-up', 'Marketing Automation'],
       num: '06',
     },
+    {
+      layer: 'Search',
+      title: 'AI SEO, AEO & GEO',
+      desc: 'Search content and site structure designed to help people find clear answers across search engines and AI discovery tools.',
+      tags: ['Technical SEO', 'Answer-Focused Content', 'Structured Data', 'AI Search Readiness'],
+      num: '07',
+    },
   ];
 
   return (

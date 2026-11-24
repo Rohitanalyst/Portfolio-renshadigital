@@ -25,10 +25,10 @@ const projects: Project[] = [
     description:
       'An independent winter heater concept with product stills, lifestyle scenes and a narrated vertical reel.',
     media: [
-      { src: '/creative/heater/01-hero.png', alt: 'Red radiant heater in a warm living room' },
-      { src: '/creative/heater/02-product.png', alt: 'Red radiant heater product visual on a dark studio background' },
-      { src: '/creative/heater/03-morning.png', alt: 'Red radiant heater in a bright living room' },
-      { src: '/creative/heater/04-evening.png', alt: 'Red radiant heater in an evening living room scene' },
+      { src: '/creative/heater/01-hero.webp', alt: 'Red radiant heater in a warm living room' },
+      { src: '/creative/heater/02-product.webp', alt: 'Red radiant heater product visual on a dark studio background' },
+      { src: '/creative/heater/03-morning.webp', alt: 'Red radiant heater in a bright living room' },
+      { src: '/creative/heater/04-evening.webp', alt: 'Red radiant heater in an evening living room scene' },
       { src: '/creative/heater/05-reel.mp4', alt: 'Winter heater narrated motion concept', type: 'video' },
     ],
   },
@@ -152,6 +152,7 @@ export default function CreativeCampaigns() {
                     src={project.media[0].src}
                     alt={project.media[0].alt}
                     fill
+                    loading={project.id === 'creative-winter-heater' ? 'eager' : 'lazy'}
                     sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"
                     className="object-cover transition duration-500 group-hover:scale-105"
                   />
